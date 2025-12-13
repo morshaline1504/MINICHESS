@@ -1,4 +1,4 @@
-// game.js - Main game controller with complete Game Rules Implementation
+
 
 class MiniChessGame {
     constructor() {
@@ -58,7 +58,7 @@ class MiniChessGame {
         this.ui.clearStatusMessage();
         this.updateDisplay();
         
-        // Check if AI should move first
+        
         if ((this.gameMode === 'human-ai' && this.playerColor === 'black') ||
             this.gameMode === 'ai-ai') {
             setTimeout(() => this.makeAIMove(), 500);
