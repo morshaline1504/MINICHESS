@@ -66,25 +66,25 @@ class MiniChessGame {
     }
 
     resetGameMode() {
-        // Reset to default settings
+       
         this.gameMode = 'human-ai';
         this.playerColor = 'white';
         this.ai.setDifficulty(2);
         
-        // Update UI
+        
         document.getElementById('gameModeSelect').value = 'human-ai';
         document.getElementById('playerColorSelect').value = 'white';
         document.getElementById('aiDifficultySelect').value = '2';
         this.ui.updateSettingsVisibility(this.gameMode);
         
-        // Start new game with reset settings
+       
         this.startNewGame();
     }
 
     handleSquareClick(row, col) {
         if (this.gameOver || this.thinking) return;
 
-        // In human vs AI mode, only allow clicks on player's turn
+        
         if (this.gameMode === 'human-ai' && 
             this.isWhiteTurn !== (this.playerColor === 'white')) {
             return;
@@ -92,7 +92,7 @@ class MiniChessGame {
 
         const piece = this.board.getPiece(row, col);
 
-        // If a square is already selected
+        
         if (this.ui.selectedSquare) {
             const isLegalMove = this.ui.legalMoves.some(
                 move => move.row === row && move.col === col
@@ -110,7 +110,7 @@ class MiniChessGame {
             this.ui.clearSelection();
             this.updateDisplay();
         } 
-        // Select a piece
+        
         else if (piece && this.board.isCurrentPlayerPiece(piece, this.isWhiteTurn)) {
             this.ui.setSelectedSquare(row, col);
             const legalMoves = PieceMovement.getLegalMoves(this.board, row, col);
@@ -123,7 +123,7 @@ class MiniChessGame {
         const piece = this.board.getPiece(fromRow, fromCol);
         const captured = this.board.makeMove(fromRow, fromCol, toRow, toCol);
         
-        // Add to history
+       
         this.moveHistory.push({
             piece: piece,
             captured: captured,
@@ -131,10 +131,10 @@ class MiniChessGame {
             boardState: this.board.clone()
         });
 
-        // Check game state with proper termination conditions
+       
         this.checkGameStateWithRules();
 
-        // AI move in appropriate modes
+        
         if (!this.gameOver) {
             if (this.gameMode === 'human-ai' || this.gameMode === 'ai-ai') {
                 setTimeout(() => this.makeAIMove(), 300);
