@@ -1,9 +1,9 @@
-// board.js - Board state management and move validation
+
 
 const ROWS = 6;
 const COLS = 5;
 
-// Initial board setup for 6x5 MiniChess
+
 const INITIAL_BOARD = [
     ['r', 'n', 'q', 'k', 'b'],
     ['p', 'p', 'p', 'p', 'p'],
@@ -61,7 +61,7 @@ class Board {
         this.setPiece(toRow, toCol, piece);
         this.setPiece(fromRow, fromCol, null);
 
-        // Pawn promotion
+       
         if (piece && piece.toLowerCase() === 'p') {
             if ((piece === 'P' && toRow === 0) || (piece === 'p' && toRow === ROWS - 1)) {
                 this.setPiece(toRow, toCol, piece === 'P' ? 'Q' : 'q');
