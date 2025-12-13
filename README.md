@@ -4,8 +4,8 @@ A fully functional implementation of MiniChess with advanced AI opponent powered
 # MiniChess AI - 6×5 Chess Game
 
 একটি সম্পূর্ণ কার্যকরী MiniChess গেম যেখানে Minimax Algorithm এবং Alpha-Beta Pruning ব্যবহার করে AI তৈরি করা হয়েছে।
-
-## 📁 Project Structure
+ 
+Project Structure
 
 ```
 minichess-ai/
@@ -23,31 +23,32 @@ minichess-ai/
 └── README.md              # This file
 ```
 
-## 🚀 কিভাবে VS Code এ Run করবেন
+কিভাবে VS Code এ Run করবেন
 
-### Method 1: Live Server Extension (সবচেয়ে সহজ)
+Method 1: Live Server Extension (সবচেয়ে সহজ)
 
-1. **Live Server Extension Install করুন:**
+1.  Live Server Extension Install করুন:**
    - VS Code খুলুন
    - Left sidebar এ Extensions icon (Ctrl+Shift+X) এ ক্লিক করুন
    - Search করুন: "Live Server"
    - "Live Server" by Ritwick Dey - Install করুন
 
-2. **Project খুলুন:**
+2. Project খুলুন:
    ```bash
    # Terminal এ এই command দিন:
    cd minichess-ai
    code .
    ```
 
-3. **Run করুন:**
+3. Run করুন:
    - `index.html` file টি VS Code এ খুলুন
    - File এর মধ্যে Right-click করুন
    - "Open with Live Server" select করুন
    - অথবা নিচে Status Bar এ "Go Live" button এ ক্লিক করুন
    - Browser এ automatically খুলে যাবে (http://127.0.0.1:5500)
 
-### Method 2: Python HTTP Server (যদি Python installed থাকে)
+ 
+Method 2: Python HTTP Server (যদি Python installed থাকে)
 
 ```bash
 # Project folder এ যান
@@ -62,10 +63,10 @@ python -m SimpleHTTPServer 8000
 
 তারপর browser এ যান: `http://localhost:8000`
 
-### Method 3: Node.js HTTP Server
+Method 3: Node.js HTTP Server
 
 ```bash
-# প্রথমে http-server install করুন (globally)
+প্রথমে http-server install করুন (globally)
 npm install -g http-server
 
 # Project folder এ যান
