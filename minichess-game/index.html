@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniChess AI - 6×5 Chess Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-section">
+                <span class="crown">♔</span>
+                <h1>MiniChess AI</h1>
+                <span class="crown">♔</span>
+            </div>
+            <p class="subtitle">6×5 Chess with Advanced AI</p>
+        </header>
+
+        <div class="game-layout">
+            
+            <div class="board-section">
+                <div class="game-status">
+                    <div class="turn-indicator">
+                        <div class="turn-dot" id="turnDot"></div>
+                        <span id="turnText">Current Turn: WHITE</span>
+                    </div>
+                    <div id="statusMessage" class="status-text"></div>
+                </div>
+
+                <div class="board-container">
+                    <div id="chessBoard" class="chess-board"></div>
+                </div>
+
+                <div class="game-controls">
+                    <button id="newGameBtn" class="btn btn-primary">
+                        <span class="icon">↻</span> New Game
+                    </button>
+                    <button id="undoBtn" class="btn btn-secondary">
+                        <span class="icon">↶</span> Undo
+                    </button>
+                    <button id="settingsBtn" class="btn btn-settings">
+                        <span class="icon">⚙</span>
+                    </button>
+                    <button id="aboutBtn" class="btn btn-info">
+                        <span class="icon">ℹ</span>
+                    </button>
+                </div>
+            </div>
+
+           
+            <div class="sidebar">
+                
+                <div id="settingsPanel" class="panel settings-panel">
+                    <h3><span class="icon">⚙</span> Game Settings</h3>
+                    <div class="setting-group">
+                        <label>Game Mode</label>
+                        <select id="gameModeSelect" class="select-input">
+                            <option value="human-human">Human vs Human</option>
+                            <option value="human-ai" selected>Human vs AI</option>
+                            <option value="ai-ai">AI vs AI</option>
+                        </select>
+                    </div>
+                    <div class="setting-group" id="playerColorGroup">
+                        <label>Your Color</label>
+                        <select id="playerColorSelect" class="select-input">
+                            <option value="white" selected>White (First Move)</option>
+                            <option value="black">Black (Second Move)</option>
+                        </select>
+                    </div>
+                    <div class="setting-group" id="aiDifficultyGroup">
+                        <label>AI Difficulty</label>
+                        <select id="aiDifficultySelect" class="select-input">
+                            <option value="1">Beginner (Depth 1)</option>
+                            <option value="2" selected>Balanced (Depth 2)</option>
+                            <option value="3">Advanced (Depth 3)</option>
+                            <option value="4">Expert (Depth 4)</option>
+                        </select>
+                    </div>
+                    <button id="resetModeBtn" class="btn btn-primary full-width">Reset Game Mode</button>
+                </div>
+
+               
+                <div class="panel info-panel">
+                    <h3>Game Info</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Move Count:</span>
+                            <span id="moveCount" class="info-value">0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Legal Moves:</span>
+                            <span id="legalMovesCount" class="info-value">0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status:</span>
+                            <span id="gameStatus" class="info-value status-normal">Normal</span>
+                        </div>
+                    </div>
+
+                    <div class="move-history">
+                        <h4>Move History</h4>
+                        <div id="moveHistoryList" class="history-list">
+                            <p class="no-moves">No moves yet</p>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <div id="aboutPanel" class="panel about-panel" style="display: none;">
+                    <h3><span class="icon">ℹ</span> About MiniChess</h3>
+                    <div class="about-content">
+                        <p>MiniChess is a variant of chess played on a 6×5 board with standard chess pieces and rules.</p>
+                        
+                        <h4>Board Setup (6 rows × 5 columns):</h4>
+                        <ul>
+                            <li>Black: Rook, Knight, Queen, King, Bishop + Pawns</li>
+                            <li>White: Rook, Knight, Queen, King, Bishop + Pawns</li>
+                        </ul>
+                        
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>Minimax algorithm with alpha-beta pruning</li>
+                            <li>Check and checkmate detection</li>
+                            <li>Advanced position evaluation</li>
+                            <li>Multiple difficulty levels (Depth 1-4)</li>
+                            <li>Three game modes with reset option</li>
+                            <li>Move validation and legal move filtering</li>
+                        </ul>
+                        
+                        <h4>Rules:</h4>
+                        <ul>
+                            <li>King capture ends the game</li>
+                            <li>Check must be resolved</li>
+                            <li>Checkmate = Winner declared</li>
+                            <li>Stalemate = Draw</li>
+                            <li>Pawns promote to Queen on last rank</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>AI Thinking...</p>
+    </div>
+
+    <script src="js/board.js"></script>
+    <script src="js/pieces.js"></script>
+    <script src="js/evaluation.js"></script>
+    <script src="js/minimax.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
