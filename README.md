@@ -59,9 +59,10 @@ Then open browser at: `http://localhost:8000`
 ### Method 3: Node.js HTTP Server
 
 ```bash
-npm install -g http-server
 
 cd minichess-ai
+
+npm install -g http-server
 
 http-server
 
