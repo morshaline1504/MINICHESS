@@ -1,4 +1,4 @@
-// ui.js - User Interface management with Game Rules Messages
+
 
 class GameUI {
     constructor() {
@@ -17,14 +17,14 @@ class GameUI {
                 square.dataset.row = row;
                 square.dataset.col = col;
 
-                // Alternating colors
+              
                 if ((row + col) % 2 === 0) {
                     square.classList.add('light');
                 } else {
                     square.classList.add('dark');
                 }
 
-                // Add piece
+                
                 const piece = board.getPiece(row, col);
                 if (piece) {
                     const pieceSpan = document.createElement('span');
@@ -34,14 +34,14 @@ class GameUI {
                     square.appendChild(pieceSpan);
                 }
 
-                // Highlight selected square
+                
                 if (this.selectedSquare && 
                     this.selectedSquare.row === row && 
                     this.selectedSquare.col === col) {
                     square.classList.add('selected');
                 }
 
-                // Highlight legal moves
+                
                 const isLegalMove = this.legalMoves.some(
                     move => move.row === row && move.col === col
                 );
@@ -142,13 +142,13 @@ class GameUI {
         this.updateStatusMessage(message, 'checkmate');
     }
 
-    // NEW: Display Check message with player name
+   
     showCheckMessage(player) {
         const playerText = player.toUpperCase();
         this.updateStatusMessage(`⚠ CHECK! ${playerText} King is under attack!`, 'check');
     }
 
-    // NEW: Display Winner message clearly
+    
     showWinnerMessage(message) {
         this.updateStatusMessage(message, 'checkmate');
     }
