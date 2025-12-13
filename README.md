@@ -170,9 +170,9 @@ Row 5: [R] [N] [Q] [K] [B]  ← White pieces
 ## Technical Details
 
 **Technologies:**
-- HTML5
-- CSS3
-- Vanilla JavaScript (ES6+)
+- HTML
+- CSS
+- JavaScript
 - Object-Oriented Programming
 
 **Features:**
