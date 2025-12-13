@@ -45,10 +45,10 @@ class BoardEvaluation {
                 const isWhite = board.isWhitePiece(piece);
                 const pieceType = piece.toLowerCase();
                 
-                // Material value
+                
                 score += this.PIECE_VALUES[piece];
 
-                // Positional bonuses
+                
                 if (pieceType === 'p') {
                     const tableRow = isWhite ? row : (ROWS - 1 - row);
                     score += isWhite ? 
