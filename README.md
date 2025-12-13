@@ -1,146 +1,136 @@
-# MINICHESS
+# MINICHESS AI
+
 A fully functional implementation of MiniChess with advanced AI opponent powered by Minimax algorithm with Alpha-Beta pruning optimization.
 
-# MiniChess AI - 6×5 Chess Game
-
-একটি সম্পূর্ণ কার্যকরী MiniChess গেম যেখানে Minimax Algorithm এবং Alpha-Beta Pruning ব্যবহার করে AI তৈরি করা হয়েছে।
- 
-Project Structure
+## Project Structure
 
 ```
 minichess-ai/
-├── index.html              # Main HTML file
+├── index.html              
 ├── css/
-│   └── styles.css         # All styling
+│   └── styles.css         
 ├── js/
-│   ├── board.js           # Board state management
-│   ├── pieces.js          # Piece movement logic
-│   ├── evaluation.js      # Position evaluation
-│   ├── minimax.js         # Minimax algorithm
-│   ├── ai.js              # AI controller
-│   ├── ui.js              # User interface
-│   └── game.js            # Main game controller
-└── README.md              # This file
+│   ├── board.js           
+│   ├── pieces.js          
+│   ├── evaluation.js      
+│   ├── minimax.js         
+│   ├── ai.js              
+│   ├── ui.js              
+│   └── game.js            
+└── README.md              
 ```
 
-কিভাবে VS Code এ Run করবেন
+## How to Run in VS Code
 
-Method 1: Live Server Extension (সবচেয়ে সহজ)
+### Method 1: Live Server Extension
 
-1.  Live Server Extension Install করুন:**
-   - VS Code খুলুন
-   - Left sidebar এ Extensions icon (Ctrl+Shift+X) এ ক্লিক করুন
-   - Search করুন: "Live Server"
-   - "Live Server" by Ritwick Dey - Install করুন
+1. **Install Live Server Extension:**
+   - Open VS Code
+   - Click Extensions icon in left sidebar (Ctrl+Shift+X)
+   - Search for "Live Server"
+   - Install "Live Server" by Ritwick Dey
 
-2. Project খুলুন:
+2. **Open Project:**
    ```bash
-   # Terminal এ এই command দিন:
    cd minichess-ai
    code .
    ```
 
-3. Run করুন:
-   - `index.html` file টি VS Code এ খুলুন
-   - File এর মধ্যে Right-click করুন
-   - "Open with Live Server" select করুন
-   - অথবা নিচে Status Bar এ "Go Live" button এ ক্লিক করুন
-   - Browser এ automatically খুলে যাবে (http://127.0.0.1:5500)
+3. **Run:**
+   - Open `index.html` file in VS Code
+   - Right-click inside the file
+   - Select "Open with Live Server"
+   - Or click "Go Live" button in Status Bar
+   - Browser will open automatically at http://127.0.0.1:5500
 
- 
-Method 2: Python HTTP Server (যদি Python installed থাকে)
+### Method 2: Python HTTP Server
 
 ```bash
-# Project folder এ যান
 cd minichess-ai
 
-# Python 3 দিয়ে server run করুন
 python -m http.server 8000
 
-# অথবা Python 2 থাকলে
+# Or if using Python 2
 python -m SimpleHTTPServer 8000
 ```
 
-তারপর browser এ যান: `http://localhost:8000`
+Then open browser at: `http://localhost:8000`
 
-Method 3: Node.js HTTP Server
+### Method 3: Node.js HTTP Server
 
 ```bash
-প্রথমে http-server install করুন (globally)
 npm install -g http-server
 
-# Project folder এ যান
 cd minichess-ai
 
-# Server run করুন
 http-server
 
-# অথবা specific port এ
+# Or specify port
 http-server -p 8080
 ```
 
-Browser এ যান: `http://localhost:8080`
+Open browser at: `http://localhost:8080`
 
-### Method 4: Direct Browser Open (Simple কিন্তু কিছু limitation আছে)
+### Method 4: Direct Browser Open
 
-- `index.html` file এ double-click করুন
-- অথবা browser এ drag and drop করুন
-- সাধারণত কাজ করবে, কিন্তু কিছু advanced feature এ সমস্যা হতে পারে
+- Double-click `index.html` file
+- Or drag and drop into browser
+- Works for basic functionality
 
-## 📝 File গুলোর Code কোথায়?
+## File Structure
 
-### JS Files Location:
+### JavaScript Files:
 
-1. **board.js** - Board state এবং move management
+1. **board.js** - Board state and move management
    - Location: `js/board.js`
-   - Purpose: Board তৈরি, piece placement, move execution
+   - Purpose: Board creation, piece placement, move execution
 
 2. **pieces.js** - Piece movement rules
    - Location: `js/pieces.js`
-   - Purpose: সব piece এর movement logic, legal move calculation
+   - Purpose: Movement logic for all pieces, legal move calculation
 
 3. **evaluation.js** - Board evaluation
    - Location: `js/evaluation.js`
-   - Purpose: Board position এর score calculate করা
+   - Purpose: Calculate position scores
 
 4. **minimax.js** - Minimax algorithm
    - Location: `js/minimax.js`
-   - Purpose: AI এর decision making, Alpha-Beta pruning
+   - Purpose: AI decision making with Alpha-Beta pruning
 
 5. **ai.js** - AI player controller
    - Location: `js/ai.js`
-   - Purpose: AI move calculation এবং timing
+   - Purpose: AI move calculation and timing
 
 6. **ui.js** - User interface
    - Location: `js/ui.js`
-   - Purpose: Board render, status update, visual feedback
+   - Purpose: Board rendering, status updates, visual feedback
 
 7. **game.js** - Main controller
    - Location: `js/game.js`
-   - Purpose: সব component একসাথে coordinate করা
+   - Purpose: Coordinates all components
 
-## 🎮 কিভাবে খেলবেন
+## How to Play
 
-1. **Game Mode Select করুন:**
-   - Human vs Human: দুজন player locally
-   - Human vs AI: AI এর বিরুদ্ধে খেলুন
-   - AI vs AI: দুটি AI এর মধ্যে game দেখুন
+1. **Select Game Mode:**
+   - Human vs Human: Two players locally
+   - Human vs AI: Play against the AI
+   - AI vs AI: Watch two AIs compete
 
-2. **Settings Configure করুন:**
-   - আপনার color choose করুন (White/Black)
-   - AI Difficulty select করুন (Depth 1-4)
+2. **Configure Settings:**
+   - Choose your color (White/Black)
+   - Select AI Difficulty (Depth 1-4)
 
-3. **খেলা শুরু করুন:**
-   - Piece এ click করে select করুন
-   - Legal moves green color এ দেখাবে
-   - Destination square এ click করে move করুন
+3. **Start Playing:**
+   - Click a piece to select it
+   - Legal moves shown in green
+   - Click destination square to move
 
 4. **Controls:**
-   - **New Game:** নতুন game শুরু
-   - **Undo:** শেষ move reverse করুন
-   - **Reset Game Mode:** Default settings এ ফিরে যান
+   - **New Game:** Start a fresh game
+   - **Undo:** Reverse last move
+   - **Reset Game Mode:** Return to default settings
 
-## 🎯 Game Rules
+## Game Rules
 
 ### Board Setup (6×5)
 ```
@@ -153,30 +143,30 @@ Row 5: [R] [N] [Q] [K] [B]  ← White pieces
 ```
 
 ### Special Rules:
-- **Pawn Promotion:** Pawn শেষ row এ পৌঁছালে Queen হয়ে যায়
-- **Check:** King attack এর মধ্যে থাকলে check
-- **Checkmate:** Check থেকে escape করার কোনো move না থাকলে
-- **Stalemate:** Legal move না থাকলে কিন্তু check না থাকলে draw
+- **Pawn Promotion:** Pawns reaching the last row become Queens
+- **Check:** King is under attack
+- **Checkmate:** No legal moves to escape check
+- **Stalemate:** No legal moves but not in check (draw)
 
-## 🤖 AI Features
+## AI Features
 
 ### Minimax Algorithm:
-- Game tree search করে best move খুঁজে বের করে
-- Maximizer (Black) এবং Minimizer (White) approach
-- Optimal play assume করে
+- Searches game tree to find best move
+- Uses Maximizer (Black) and Minimizer (White) approach
+- Assumes optimal play from opponent
 
 ### Alpha-Beta Pruning:
-- Search space significantly reduce করে
-- Same result, কিন্তু faster execution
-- Deeper search possible করে
+- Significantly reduces search space
+- Same results, faster execution
+- Enables deeper searches
 
 ### Difficulty Levels:
-- **Beginner (Depth 1):** 1 move ahead দেখে
-- **Balanced (Depth 2):** 2 moves ahead (Default)
-- **Advanced (Depth 3):** 3 moves ahead
-- **Expert (Depth 4):** 4 moves ahead
+- **Beginner (Depth 1):** Looks 1 move ahead
+- **Balanced (Depth 2):** Looks 2 moves ahead (Default)
+- **Advanced (Depth 3):** Looks 3 moves ahead
+- **Expert (Depth 4):** Looks 4 moves ahead
 
-## 🛠️ Technical Details
+## Technical Details
 
 **Technologies:**
 - HTML5
@@ -192,7 +182,7 @@ Row 5: [R] [N] [Q] [K] [B]  ← White pieces
 - Multiple game modes
 - Visual feedback
 
-## 📊 Evaluation Function
+## Evaluation Function
 
 **Material Values:**
 - Pawn: 100
@@ -208,41 +198,30 @@ Row 5: [R] [N] [Q] [K] [B]  ← White pieces
 - King safety
 - Check penalties/bonuses
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### Game শুরু হচ্ছে না?
-- Console errors check করুন (F12)
-- সব JS files correctly loaded হয়েছে কিনা দেখুন
-- Browser cache clear করুন (Ctrl+Shift+Delete)
+### Game not starting?
+- Check console for errors (F12)
+- Verify all JS files are loaded correctly
+- Clear browser cache (Ctrl+Shift+Delete)
 
-### AI move হচ্ছে না?
-- Console এ error আছে কিনা দেখুন
-- "AI Thinking..." message দেখাচ্ছে কিনা check করুন
-- Page refresh করে আবার try করুন
+### AI not moving?
+- Check console for errors
+- Look for "AI Thinking..." message
+- Refresh page and try again
 
-### Board দেখাচ্ছে না?
-- styles.css correctly loaded হয়েছে কিনা check করুন
-- Browser console এ CSS errors আছে কিনা দেখুন
+### Board not displaying?
+- Verify styles.css is loaded correctly
+- Check browser console for CSS errors
 
-## 📱 Browser Compatibility
 
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
 
-## 📖 Additional Resources
-
-- Project Report: বিস্তারিত documentation
-- Code Comments: প্রতিটি function এ explanation আছে
-- Algorithm Explanation: Report এ full details
-
-## 👨‍💻 Development
+## Development
 
 ### Code Structure:
-- **Modular Design:** প্রতিটি file একটি specific responsibility handle করে
-- **OOP Principles:** Classes এবং encapsulation ব্যবহার করা হয়েছে
-- **Clean Code:** Meaningful variable names এবং comments
+- **Modular Design:** Each file handles specific responsibility
+- **OOP Principles:** Uses classes and encapsulation
+- **Clean Code:** Meaningful variable names
 
 ### Future Enhancements:
 - Move animation
@@ -252,16 +231,4 @@ Row 5: [R] [N] [Q] [K] [B]  ← White pieces
 - Opening book
 - Endgame tablebases
 
-## 📄 License
-
-এই project educational purposes এর জন্য তৈরি।
-
-## 🤝 Contributing
-
-Suggestions এবং improvements welcome!
-
----
-
 **Enjoy playing MiniChess AI! ♟️**
-
-যদি কোনো সমস্যা হয় বা প্রশ্ন থাকে, feel free to ask!
