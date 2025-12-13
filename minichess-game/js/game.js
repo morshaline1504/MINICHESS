@@ -179,23 +179,16 @@ class MiniChessGame {
         }
     }
 
-    /**
-     * GAME RULES AND TERMINATION CONDITIONS IMPLEMENTATION
-     * 
-     * This method implements the three core game rules:
-     * 1. King Capture - Immediate game end
-     * 2. Check Detection - Must be resolved
-     * 3. Checkmate - Winner declaration
-     */
+   
     checkGameStateWithRules() {
         const currentPlayer = this.isWhiteTurn ? 'white' : 'black';
         
-        // RULE 1: Check if King is captured - Game ends immediately
+        
         if (BoardEvaluation.isGameOver(this.board)) {
             this.gameOver = true;
             const winner = BoardEvaluation.getWinner(this.board);
             
-            // Display winner message for King capture
+           
             if (winner === 'white') {
                 this.ui.showWinnerMessage('White wins! Black King captured.');
             } else if (winner === 'black') {
