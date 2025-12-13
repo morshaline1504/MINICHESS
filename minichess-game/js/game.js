@@ -204,36 +204,36 @@ class MiniChessGame {
             return;
         }
 
-        // Switch turns
+        
         this.isWhiteTurn = !this.isWhiteTurn;
         const nextIsWhite = this.isWhiteTurn;
         const nextPlayer = nextIsWhite ? 'white' : 'black';
 
-        // RULE 2: Check if next player's King is in check
+       
         const inCheck = PieceMovement.isInCheck(this.board, nextIsWhite);
         const hasLegalMoves = PieceMovement.getAllLegalMoves(this.board, nextIsWhite).length > 0;
 
         if (inCheck && !hasLegalMoves) {
-            // RULE 3: Checkmate - Game ends with winner declaration
+            
             this.isCheckmate = true;
             this.gameOver = true;
             
-            // Display checkmate and winner message
+            
             if (currentPlayer === 'white') {
                 this.ui.showWinnerMessage('Checkmate! White wins!');
             } else {
                 this.ui.showWinnerMessage('Checkmate! Black wins!');
             }
         } else if (inCheck) {
-            // RULE 2: Display "Check" message - Player must resolve
+           
             this.isCheck = true;
             this.ui.showCheckMessage(nextPlayer);
         } else if (!hasLegalMoves) {
-            // Stalemate - Draw
+           
             this.gameOver = true;
             this.ui.showGameOverMessage('draw', false);
         } else {
-            // Normal game continues
+            
             this.isCheck = false;
             this.ui.clearStatusMessage();
         }
@@ -242,10 +242,10 @@ class MiniChessGame {
     undoMove() {
         if (this.moveHistory.length === 0 || this.thinking) return;
 
-        // Undo move
+      
         this.moveHistory.pop();
         
-        // Restore board from saved state
+        
         if (this.moveHistory.length > 0) {
             const lastMove = this.moveHistory[this.moveHistory.length - 1];
             this.board = lastMove.boardState.clone();
@@ -253,10 +253,10 @@ class MiniChessGame {
             this.board.reset();
         }
 
-        // Update turn
+        
         this.isWhiteTurn = this.moveHistory.length % 2 === 0;
         
-        // Reset game state
+      
         this.gameOver = false;
         this.isCheck = false;
         this.isCheckmate = false;
@@ -295,7 +295,7 @@ class MiniChessGame {
     }
 }
 
-// Initialize game when page loads
+
 document.addEventListener('DOMContentLoaded', () => {
     new MiniChessGame();
 });
