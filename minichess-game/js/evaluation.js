@@ -66,7 +66,7 @@ class BoardEvaluation {
                         this.KING_TABLE[tableRow][col];
                 }
 
-                // Center control bonus
+               
                 const centerCol = Math.floor(COLS / 2);
                 if (col === centerCol) {
                     score += isWhite ? -10 : 10;
@@ -74,7 +74,7 @@ class BoardEvaluation {
             }
         }
 
-        // Check penalties/bonuses
+       
         if (PieceMovement.isInCheck(board, true)) {
             score -= 50;
         }
