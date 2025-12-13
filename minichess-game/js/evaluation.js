@@ -1,4 +1,4 @@
-// evaluation.js - Board evaluation functions
+
 
 class BoardEvaluation {
     static PIECE_VALUES = {
@@ -6,11 +6,11 @@ class BoardEvaluation {
         'P': -100, 'N': -320, 'B': -330, 'R': -500, 'Q': -900, 'K': -20000
     };
 
-    // Positional tables for 6x5 board
+    
     static PAWN_TABLE = [
-        [0, 0, 0, 0, 0],     // Row 0 (Black promotion)
-        [50, 50, 50, 50, 50], // Row 1
-        [10, 10, 20, 10, 10], // Row 2
+        [0, 0, 0, 0, 0],     
+        [50, 50, 50, 50, 50], 
+        [10, 10, 20, 10, 10], 
         [5, 5, 10, 5, 5],     // Row 3
         [0, 0, 0, 0, 0],      // Row 4
         [0, 0, 0, 0, 0]       // Row 5 (White promotion)
