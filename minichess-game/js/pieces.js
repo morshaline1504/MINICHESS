@@ -1,4 +1,4 @@
-// pieces.js - Piece movement logic
+
 
 class PieceMovement {
     static getPieceSymbol(piece) {
@@ -42,7 +42,6 @@ class PieceMovement {
             return moves;
         }
 
-        // Filter out moves that would leave king in check
         return moves.filter(move => {
             const testBoard = board.clone();
             testBoard.makeMove(row, col, move.row, move.col);
@@ -55,19 +54,19 @@ class PieceMovement {
         const direction = isWhite ? -1 : 1;
         const startRow = isWhite ? 4 : 1;
 
-        // Forward move
+      
         const nextRow = row + direction;
         if (board.isValidPosition(nextRow, col) && !board.getPiece(nextRow, col)) {
             moves.push({ row: nextRow, col });
 
-            // Double move from start
+            
             const doubleRow = row + 2 * direction;
             if (row === startRow && !board.getPiece(doubleRow, col)) {
                 moves.push({ row: doubleRow, col });
             }
         }
 
-        // Captures
+       
         for (const dc of [-1, 1]) {
             const newRow = row + direction;
             const newCol = col + dc;
