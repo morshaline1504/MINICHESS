@@ -43,20 +43,7 @@ minichess-ai/
    - Or click "Go Live" button in Status Bar
    
 
-### Method 2: Python HTTP Server
-
-```bash
-cd minichess-ai
-
-python -m http.server 8000
-
-# Or if using Python 2
-python -m SimpleHTTPServer 8000
-```
-
-Then open browser at: `http://localhost:8000`
-
-### Method 3: Node.js HTTP Server
+### Method 2: Node.js HTTP Server
 
 ```bash
 
@@ -72,7 +59,7 @@ http-server -p 8080
 
 Open browser at: `http://localhost:8080`
 
-### Method 4: Direct Browser Open
+### Method 3: Direct Browser Open
 
 - Double-click `index.html` file
 - Or drag and drop into browser
