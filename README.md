@@ -28,7 +28,7 @@ minichess-ai/
    - Open VS Code
    - Click Extensions icon in left sidebar (Ctrl+Shift+X)
    - Search for "Live Server"
-   - Install "Live Server" by Ritwick Dey
+   - Install "Live Server" 
 
 2. **Open Project:**
    ```bash
