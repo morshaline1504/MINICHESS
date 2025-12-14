@@ -41,7 +41,7 @@ minichess-ai/
    - Right-click inside the file
    - Select "Open with Live Server"
    - Or click "Go Live" button in Status Bar
-   - Browser will open automatically at http://127.0.0.1:5500
+   
 
 ### Method 2: Python HTTP Server
 
